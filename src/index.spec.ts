@@ -189,6 +189,16 @@ describe("splitHtmlIntoElements", () => {
         "</div>",
       ],
     },
+    {
+      description: "text with >",
+      htmlString: "<div> hello >> word </div>",
+      expectedResult: ["<div>", " hello >> word ", "</div>"],
+    },
+    {
+      description: "text with >",
+      htmlString: "<div> hello >> word </div> xd <<<",
+      expectedResult: ["<div>", " hello >> word ", "</div>", "xd <<< ddd"],
+    },
   ];
   test.each(testCases)("$description", ({ htmlString, expectedResult }) => {
     expect(splitHtmlIntoElements(htmlString)).toEqual(expectedResult);

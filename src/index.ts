@@ -23,35 +23,23 @@ export function splitHtmlIntoElements(htmlString: string) {
     if (caracter === "<") {
       currentScopeOpenTag++;
       if (currentScopeOpenTag === 1) {
-        if (currentElement === "") {
-          currentElement = "<";
-        } else {
+        if (currentElement !== "") {
           allElements.push(currentElement);
-          currentElement = "<";
         }
-      } else if (currentScopeOpenTag > 1) {
-        currentElement += "<";
-      } else {
-        currentElement += "<";
-      }
-    } else if (caracter === ">") {
-      currentScopeOpenTag--;
-      if (currentScopeOpenTag === 0) {
-        currentElement += caracter;
-        allElements.push(currentElement);
         currentElement = "";
       }
-      if (currentScopeOpenTag < 0) {
+    }
+    currentElement += caracter;
+    if (caracter === ">") {
+      currentScopeOpenTag--;
+      if (currentScopeOpenTag === 0) {
+        allElements.push(currentElement);
+        currentElement = "";
+      } else if (currentScopeOpenTag < 0) {
         currentScopeOpenTag = 0;
       }
-      if (currentScopeOpenTag > 0) {
-        currentElement += caracter;
-      }
     } else if (i === htmlString.length - 1) {
-      currentElement += caracter;
       allElements.push(currentElement);
-    } else {
-      currentElement += caracter;
     }
   }
 
