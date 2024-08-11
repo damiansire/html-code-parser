@@ -13,3 +13,11 @@ export function isTag(str: string): boolean {
 
   return tagRegex.test(str);
 }
+
+export function spliteInTags(htmlString: string) {
+  const regex = /(<[^>]+>)/g;
+
+  const result = htmlString.split(regex).filter(Boolean);
+
+  return result;
+}
