@@ -1,4 +1,4 @@
-import { isTag, spliteInTags } from "./index";
+import { isTag, spliteInHtmlElements } from "./index";
 
 describe("isTag", () => {
   const validTags = [
@@ -75,7 +75,7 @@ describe("isTag", () => {
   });
 });
 
-describe("spliteInTags", () => {
+describe("spliteInHtmlElements", () => {
   const testCases = [
     {
       description: "splits a simple HTML string into tags and content",
@@ -191,6 +191,6 @@ describe("spliteInTags", () => {
     },
   ];
   test.each(testCases)("$description", ({ htmlString, expectedResult }) => {
-    expect(spliteInTags(htmlString)).toEqual(expectedResult);
+    expect(spliteInHtmlElements(htmlString)).toEqual(expectedResult);
   });
 });
