@@ -9,7 +9,7 @@ export function isTag(str: string): boolean {
 
   // Enhanced Regex (Case-insensitive, Handles attributes, and spaces correctly, plus Angular events)
   const tagRegex =
-    /^<\/?[a-z][\w-]*(\s+[\w-]*(?:(?:\(\w+\))?=\s*(?:".*?"|'.*?'|[^'">\s]+))?)*\s*\/?>$/;
+    /^<\/?[a-z][\w-]*(\s+[\w-\[\]]*(?:(?:\(\s*\w+\s*\))?=\s*(?:".*?"|'.*?'|[^'">\s]+))?)*\s*\/?>$/;
 
   return tagRegex.test(str);
 }

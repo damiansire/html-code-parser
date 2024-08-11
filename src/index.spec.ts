@@ -35,6 +35,13 @@ describe("isTag", () => {
     '<button class="btn btn-primary" disabled>',
 
     '<button (click)="increment()">',
+
+    '<input [value]="name" (input)="name = $event.target.value">',
+
+    '<button (click)="guardarDatos()">',
+
+    '<img src={imagenUrl} alt="description" />',
+    '<input v-model="nombre"> ',
   ];
 
   const caseInsensitiveTags = ["<DIV>", "</DIV>"];
