@@ -15,9 +15,45 @@ export function isTag(str: string): boolean {
 }
 
 export function splitHtmlIntoElements(htmlString: string) {
-  const regex = /(<[^>]+>)/g;
+  let allElements: string[] = [];
+  let currentElement = "";
+  let currentScopeOpenTag = 0;
+  for (let i = 0; i < htmlString.length; i++) {
+    let caracter = htmlString[i];
+    if (caracter === "<") {
+      currentScopeOpenTag++;
+      if (currentScopeOpenTag === 1) {
+        if (currentElement === "") {
+          currentElement = "<";
+        } else {
+          allElements.push(currentElement);
+          currentElement = "<";
+        }
+      } else if (currentScopeOpenTag > 1) {
+        currentElement += "<";
+      } else {
+        currentElement += "<";
+      }
+    } else if (caracter === ">") {
+      currentScopeOpenTag--;
+      if (currentScopeOpenTag === 0) {
+        currentElement += caracter;
+        allElements.push(currentElement);
+        currentElement = "";
+      }
+      if (currentScopeOpenTag < 0) {
+        currentScopeOpenTag = 0;
+      }
+      if (currentScopeOpenTag > 0) {
+        currentElement += caracter;
+      }
+    } else if (i === htmlString.length - 1) {
+      currentElement += caracter;
+      allElements.push(currentElement);
+    } else {
+      currentElement += caracter;
+    }
+  }
 
-  const result = htmlString.split(regex).filter(Boolean);
-
-  return result;
+  return allElements;
 }
