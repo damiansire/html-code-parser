@@ -14,7 +14,7 @@ export function isTag(str: string): boolean {
   return tagRegex.test(str);
 }
 
-export function spliteInHtmlElements(htmlString: string) {
+export function splitHtmlIntoElements(htmlString: string) {
   const regex = /(<[^>]+>)/g;
 
   const result = htmlString.split(regex).filter(Boolean);
