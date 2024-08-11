@@ -7,7 +7,8 @@
   "scripts": {
     "build": "tsc",
     "test": "jest",
-    "test-publish": "npm publish --dry-run"
+    "test:watch": "jest --watch",
+    "test:publish": "npm publish --dry-run"
   },
   "files": [
     "dist",

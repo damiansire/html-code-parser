@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1723354465609" clover="3.2.0">
-  <project timestamp="1723354465610" name="All files">
+<coverage generated="1723356480369" clover="3.2.0">
+  <project timestamp="1723356480369" name="All files">
     <metrics statements="15" coveredstatements="15" conditionals="5" coveredconditionals="5" methods="1" coveredmethods="1" elements="21" coveredelements="21" complexity="0" loc="15" ncloc="15" packages="1" files="1" classes="1"/>
     <file name="index.ts" path="C:\Users\Damian\Documents\dev\html-code-parser\src\index.ts">
       <metrics statements="15" coveredstatements="15" conditionals="5" coveredconditionals="5" methods="1" coveredmethods="1"/>
@@ -10,15 +10,15 @@
       <line num="4" count="27" type="stmt"/>
       <line num="5" count="27" type="stmt"/>
       <line num="6" count="27" type="cond" truecount="3" falsecount="0"/>
-      <line num="7" count="5" type="stmt"/>
-      <line num="8" count="5" type="stmt"/>
-      <line num="9" count="22" type="cond" truecount="1" falsecount="0"/>
-      <line num="10" count="22" type="stmt"/>
-      <line num="11" count="22" type="stmt"/>
-      <line num="12" count="22" type="stmt"/>
-      <line num="13" count="22" type="stmt"/>
-      <line num="14" count="22" type="stmt"/>
-      <line num="15" count="22" type="stmt"/>
+      <line num="7" count="4" type="stmt"/>
+      <line num="8" count="4" type="stmt"/>
+      <line num="9" count="23" type="cond" truecount="1" falsecount="0"/>
+      <line num="10" count="23" type="stmt"/>
+      <line num="11" count="23" type="stmt"/>
+      <line num="12" count="23" type="stmt"/>
+      <line num="13" count="23" type="stmt"/>
+      <line num="14" count="23" type="stmt"/>
+      <line num="15" count="23" type="stmt"/>
     </file>
   </project>
 </coverage>
